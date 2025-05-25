@@ -1,9 +1,7 @@
 .vs/
 bin/
-<<<<<<< Updated upstream
 obj/
-=======
 obj/IDF-Project.csproj 
 /obj 
 IDF-Project.csproj/ 
->>>>>>> Stashed changes
+
