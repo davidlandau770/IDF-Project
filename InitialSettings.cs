@@ -23,7 +23,7 @@ namespace ProjectIDF
             {
                 Console.WriteLine(item);
             }
-            IntelligenceMessages.print();
+            IntelligenceMessages.printThrats();
             //foreach (var a in TerroristWeaponArssenal.Personalweapon()) { 
             //    Console.WriteLine(a);
             //}
