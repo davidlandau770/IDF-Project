@@ -44,6 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aman.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="Artillery.cs" />
+    <Compile Include="AttackTools.cs" />
+    <Compile Include="CarryingOutAttack.cs" />
+    <Compile Include="CreatRandomNumOfTerrorists.cs" />
+    <Compile Include="CreatRandomTerroristNames.cs" />
+    <Compile Include="F16.cs" />
+    <Compile Include="HamasDefinition.cs" />
+    <Compile Include="IdfDefinition.cs" />
+>>>>>>> Stashed changes
     <Compile Include="InitialSettings.cs" />
     <Compile Include="MenuToUser.cs" />
     <Compile Include="Program.cs" />
