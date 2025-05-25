@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace ProjectIDF
 {
-    internal abstract class AttackTools
+    internal interface AttackTools
     {
-        public abstract string ToolName { get; }
-        public abstract string[] BombType { get; }
-        public abstract int AmmunitionCapacity { get;}
-        public int FuelSupply { get; set; }
-        public abstract string[] EffectiveAgainst { get; }
+        string ToolName { get; }
+        string[] BombType { get; }
+        int AmmunitionCapacity { get; set; }
+        string[] EffectiveAgainst { get; }
+        int FuelSupply { get; set; }
+        void UseAmmunition();
+        void ReloadAmmonition();
+        void UseFuel();
+        void ReloadFuel();
 
     }
 }
