@@ -8,10 +8,26 @@ namespace ProjectIDF
 {
     internal class Artillery : AttackTools
     {
-        public override string ToolName { get; } = "M109 Artillery";
-        public override string[] BombType { get; } = { "M109 Explosive shell" };
-        public override int AmmunitionCapacity { get; } = 40;
-        public override string[] EffectiveAgainst { get; } = { "open fildes" };
-        
+        public string ToolName { get; } = "M109 Artillery";
+        public string[] BombType { get; } = { "M109 Explosive shell" };
+        public int AmmunitionCapacity { get; set; } = 40;
+        public string[] EffectiveAgainst { get; } = { "open fildes" };
+        public int FuelSupply { get; set; } = 100;
+        public void UseAmmunition()
+        {
+            AmmunitionCapacity -= 1;
+        }
+        public void ReloadAmmonition()
+        {
+            AmmunitionCapacity = 8;
+        }
+        public void UseFuel()
+        {
+            FuelSupply -= 1;
+        }
+        public void ReloadFuel()
+        {
+            FuelSupply = 100;
+        }
     }
 }
