@@ -11,8 +11,8 @@ namespace ProjectIDF
     {
         public string Name {  get; set; }
         int Rank;
-        string Status;
-        string[] Weapon;
+        string Status = "alive";
+        public string[] Weapon;
         public int rank
         {
             get {  return Rank; }
@@ -31,49 +31,13 @@ namespace ProjectIDF
                 }
             }
         }
-        public string status
-        {
-            get { return Status; }
-            set 
-            {
-                if (value.ToLower() == "alive" || value.ToLower() == "dead")
-                {
-                    Status = value;
-                }
-                else
-                {
-                    Status = "alive";
-                }
-            }
-        }
+    
 
-        public string[] weapon
-        {
-            get { return Weapon; }
-            set
-            {
-                Weapon = new string[value.Length];
-                for (int i = 0; i < value.Length; i++)
-                {
-                    if (allWeapon.Contains(value[i]))
-                    {
-                        Weapon[i] = value[i];
-                    }
-                    else
-                    {
-                        Weapon[i] = "Unknown";
-                    }
-                }
-            }
-        }
-        private static readonly string[] allWeapon = new string[] {"knife","gun","M16","AK47" };
-
-        public Terrorist(string name, int rank, string status, string[] weapon)
+        public Terrorist(string name, int rank, string[] weapon)
         {
             Name = name;
             this.rank = rank;
-            this.status = status;
-            this.weapon = weapon;
+            this.Weapon = weapon;
         }
 
         public override string ToString()
