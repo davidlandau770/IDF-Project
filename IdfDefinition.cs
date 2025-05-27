@@ -12,6 +12,5 @@ namespace ProjectIDF
         public string CurrentCommander { get; } = "eyal zamir";
         public string[] CollectionOfStrike = new string[] { "aircraft", "drones", "artillery" };   
         
-
     }
 }
