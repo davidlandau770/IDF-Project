@@ -63,7 +63,7 @@ namespace ProjectIDF
             return thrats;
         }
         static public string[] alerts = IntelligenceMessages.Thrats();
-        public static void printThrats()
+        public static void PrintThrats()
         {
             string[] thrat = alerts;
             foreach (string alart in thrat)

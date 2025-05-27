@@ -40,14 +40,14 @@ namespace ProjectIDF
             }
             return qualityScore;
         }
-        public void printQualityScore()
+        public void PrintQualityScore()
         {
             foreach(KeyValuePair<Terrorist,int> Q in QualityScore())
             {
                 Console.WriteLine($"{Q.Key.ToString()} --------{Q.Value}");
             }
         }
-        public string getMostDengrous()
+        public string GetMostDengrous()
         {
             int max = 0;
             string terrorist = "";
