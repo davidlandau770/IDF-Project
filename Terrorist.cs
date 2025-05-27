@@ -31,42 +31,7 @@ namespace ProjectIDF
                 }
             }
         }
-        public string status
-        {
-            get { return Status; }
-            set 
-            {
-                if (value.ToLower() == "alive" || value.ToLower() == "dead")
-                {
-                    Status = value;
-                }
-                else
-                {
-                    Status = "alive";
-                }
-            }
-        }
 
-        public string[] weapon
-        {
-            get { return Weapon; }
-            set
-            {
-                Weapon = new string[value.Length];
-                for (int i = 0; i < value.Length; i++)
-                {
-                    if (allWeapon.Contains(value[i]))
-                    {
-                        Weapon[i] = value[i];
-                    }
-                    else
-                    {
-                        Weapon[i] = "Unknown";
-                    }
-                }
-            }
-        }
-        private static readonly string[] allWeapon = new string[] {"knife","gun","M16","AK47" };
 
         public Terrorist(string name, int rank, string status, string[] weapon)
         {
