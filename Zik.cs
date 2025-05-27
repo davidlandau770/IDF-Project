@@ -30,11 +30,11 @@ namespace ProjectIDF
         {
             FuelSupply = 100;
         }
-        //public Zik(string bombType , int ammunitionCapacity , string effectiveAgainst )
-        //{
-        //    BombType = bombType;
-        //    AmmunitionCapacity = ammunitionCapacity;
-        //    EffectiveAgainst = effectiveAgainst;
-        //}
+        public IAttackTools Clone()
+        {
+            return new Zik();
+        }
+
+        
     }
 }

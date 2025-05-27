@@ -33,11 +33,10 @@ namespace ProjectIDF
         {
             FuelSupply = 100;
         }
-        //public F16(string bombType, int ammunitionCapacity, string effectiveAgainst)
-        //{
-        //    BombType = bombType;
-        //    AmmunitionCapacity = ammunitionCapacity;
-        //    EffectiveAgainst = effectiveAgainst;
-        //}
+
+        public IAttackTools Clone()
+        {
+            return new F16();
+        }
     }
 }

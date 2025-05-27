@@ -30,5 +30,10 @@ namespace ProjectIDF
         {
             FuelSupply = 100;
         }
+
+        public IAttackTools Clone()
+        {
+            return new Artillery();
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace ProjectIDF
         void ReloadAmmonition();
         void UseFuel();
         void ReloadFuel();
+        IAttackTools Clone();
 
     }
 }
