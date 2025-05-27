@@ -47,7 +47,6 @@
     <Compile Include="Aman.cs" />
     <Compile Include="Artillery.cs" />
     <Compile Include="AttackTools.cs" />
-    <Compile Include="CarryingOutAttack.cs" />
     <Compile Include="Artillery.cs" />
     <Compile Include="AttackTools.cs" />
     <Compile Include="CreatRandomNumOfTerrorists.cs" />
