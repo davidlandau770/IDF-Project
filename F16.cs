@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjectIDF
 {
-    internal class F16 : AttackTools
+    internal class F16 : IAttackTools
     {
+        public string SerialNumber { get; set; }
         public string ToolName { get; } = "F16";
         public string[] BombType { get; } = { "0.5 ton", "1 ton" };
         public int AmmunitionCapacity { get; set; } = 8;
@@ -32,11 +33,10 @@ namespace ProjectIDF
         {
             FuelSupply = 100;
         }
-        //public F16(string bombType, int ammunitionCapacity, string effectiveAgainst)
-        //{
-        //    BombType = bombType;
-        //    AmmunitionCapacity = ammunitionCapacity;
-        //    EffectiveAgainst = effectiveAgainst;
-        //}
+
+        public IAttackTools Clone()
+        {
+            return new F16();
+        }
     }
 }
