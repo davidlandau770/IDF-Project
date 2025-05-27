@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjectIDF
 {
-    internal interface AttackTools
+    internal interface IAttackTools
     {
+        string SerialNumber { get; set; }
         string ToolName { get; }
         string[] BombType { get; }
         int AmmunitionCapacity { get; set; }
@@ -17,6 +18,7 @@ namespace ProjectIDF
         void ReloadAmmonition();
         void UseFuel();
         void ReloadFuel();
+        IAttackTools Clone();
 
     }
 }

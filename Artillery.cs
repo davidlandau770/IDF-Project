@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjectIDF
 {
-    internal class Artillery : AttackTools
+    internal class Artillery : IAttackTools
     {
+        public string SerialNumber { get; set; }
         public string ToolName { get; } = "M109 Artillery";
         public string[] BombType { get; } = { "M109 Explosive shell" };
         public int AmmunitionCapacity { get; set; } = 40;
@@ -28,6 +29,11 @@ namespace ProjectIDF
         public void ReloadFuel()
         {
             FuelSupply = 100;
+        }
+
+        public IAttackTools Clone()
+        {
+            return new Artillery();
         }
     }
 }

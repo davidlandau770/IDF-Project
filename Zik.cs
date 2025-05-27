@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjectIDF
 {
-    internal class Zik : AttackTools
+    internal class Zik : IAttackTools
     {
+        public string SerialNumber { get; set; }
         public string ToolName { get; } = "Zik";
         public string[] BombType { get; } = { "veraity bombs" };
         public int AmmunitionCapacity { get; set; } = 3;
@@ -29,11 +30,11 @@ namespace ProjectIDF
         {
             FuelSupply = 100;
         }
-        //public Zik(string bombType , int ammunitionCapacity , string effectiveAgainst )
-        //{
-        //    BombType = bombType;
-        //    AmmunitionCapacity = ammunitionCapacity;
-        //    EffectiveAgainst = effectiveAgainst;
-        //}
+        public IAttackTools Clone()
+        {
+            return new Zik();
+        }
+
+        
     }
 }
