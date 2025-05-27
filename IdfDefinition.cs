@@ -11,7 +11,7 @@ namespace ProjectIDF
     {
         public string DateOfEstablishment { get; } = "may 26 1948";
         public string CurrentCommander { get; } = "eyal zamir";
-        public string[] CollectionOfStrike = new string[] { "aircraft", "drones", "artillery" };
+        private string[] CollectionOfStrike = new string[] { "aircraft", "drones", "artillery"};
         public Dictionary<string, List<IAttackTools>> Arsenal = new Dictionary<string, List<IAttackTools>>();
 
         public void CreatArsenal()
@@ -32,13 +32,10 @@ namespace ProjectIDF
                 {
                     prototype = new Artillery();
                 }
-                if (prototype == null)
-                {
-                    continue;
-                }
+
 
                 Random rand = RandomProvider.GetRandom();
-                for (int i = 1; i < rand.Next(30); i++)
+                for (int i = 1; i < rand.Next(20,30); i++)
                 {
                     IAttackTools cloned = prototype.Clone();
                     cloned.SerialNumber = $"{i:D3}";

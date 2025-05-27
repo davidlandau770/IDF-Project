@@ -43,11 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AliveOrDead.cs" />
     <Compile Include="Aman.cs" />
     <Compile Include="Artillery.cs" />
     <Compile Include="Attacking.cs" />
-    <Compile Include="AttackTools.cs" />
+    <Compile Include="IAttackTools.cs" />
     <Compile Include="AttackvAilability.cs" />
     <Compile Include="CreatRandomNumOfTerrorists.cs" />
     <Compile Include="CreatRandomTerroristNames.cs" />

@@ -11,8 +11,8 @@ namespace ProjectIDF
     {
         public string Name {  get; set; }
         int Rank;
-        string Status;
-        string[] Weapon;
+        string Status = "alive";
+        public string[] Weapon;
         public int rank
         {
             get {  return Rank; }
@@ -31,14 +31,13 @@ namespace ProjectIDF
                 }
             }
         }
+    
 
-
-        public Terrorist(string name, int rank, string status, string[] weapon)
+        public Terrorist(string name, int rank, string[] weapon)
         {
             Name = name;
             this.rank = rank;
-            this.status = status;
-            this.weapon = weapon;
+            this.Weapon = weapon;
         }
 
         public override string ToString()

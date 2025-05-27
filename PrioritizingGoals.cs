@@ -36,7 +36,7 @@ namespace ProjectIDF
             Dictionary<Terrorist, int> qualityScore = new Dictionary<Terrorist, int>();
             foreach (var t in terList)
             {
-                qualityScore[t] = t.rank* WeaponPoints(t.weapon);
+                qualityScore[t] = t.rank* WeaponPoints(t.Weapon);
             }
             return qualityScore;
         }
