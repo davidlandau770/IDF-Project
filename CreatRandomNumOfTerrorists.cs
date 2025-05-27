@@ -9,7 +9,7 @@ namespace ProjectIDF
     internal class CreatRandomNumOfTerrorists
     {
         static Random rand = RandomProvider.GetRandom();
-        static int amount = rand.Next(5,11);
+        static int amount = rand.Next(15,20);
         public static string[] terroristNames = new string[amount];
         public static List<Terrorist> terroristList = new List<Terrorist>();
         public static List<Terrorist> TerroristList()
@@ -20,7 +20,7 @@ namespace ProjectIDF
                 if (!terroristNames.Contains(name))
                 {
                     terroristNames[i] = name;
-                    Terrorist terrorist = new Terrorist(name, RandomProvider.GetRandom().Next(1, 6), AliveOrDead.Status(), TerroristWeaponArssenal.Personalweapon());
+                    Terrorist terrorist = new Terrorist(name, RandomProvider.GetRandom().Next(1, 6), TerroristWeaponArssenal.Personalweapon());
                     terroristList.Add(terrorist);
                 }
                 else
@@ -30,9 +30,6 @@ namespace ProjectIDF
             }
             return terroristList;
         }
-        public static string[] TerroristNames()
-        {
-            return terroristNames;
-        }
+        
 }
 }

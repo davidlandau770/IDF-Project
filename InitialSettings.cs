@@ -25,8 +25,9 @@ namespace ProjectIDF
             //Terrorist terrorist5 = new Terrorist("mosa", 4, "dead",new string[ ] { "gun"});
             //IdfDefinition idf = new IdfDefinition();
 
-            //CreatRandomTerroristNames name = new CreatRandomTerroristNames();
-            //CreatRandomNumOfTerrorists.printTerrorist();
+            //CreatRandomNumOfTerrorists.TerroristList();
+            //List<Terrorist> a = CreatRandomNumOfTerrorists.TerroristList();
+            //CreatRandomNumOfTerrorists.print
             //foreach (var item in CreatRandomNumOfTerrorists.TerroristList())
             //{
             //    Console.WriteLine(item);
