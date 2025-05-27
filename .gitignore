@@ -1,5 +1,7 @@
 .vs/
 bin/
+obj/
 obj/IDF-Project.csproj 
 /obj 
-IDF-Project.csproj 
+IDF-Project.csproj/ 
+

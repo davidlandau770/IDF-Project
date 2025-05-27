@@ -10,6 +10,14 @@ namespace ProjectIDF
     {
         public void trys()
         {
+            //IdfDefinition a = new IdfDefinition();
+            IdfDefinition idf = new IdfDefinition();
+            idf.CreatArsenal();
+            idf.printArsenal();
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    idf.unit.Add()
+            //}
             //Terrorist terrorist1 = new Terrorist("achmad", 4, "alive",new string[ ] {"knife","M16"});
             //Terrorist terrorist2 = new Terrorist("aibraim", 1, "alive",new string[ ] {"AK47" ,"gun"});
             //Terrorist terrorist3 = new Terrorist("rachman", 3, "alive",new string[ ] {"knife","M16", "gun"});
@@ -19,11 +27,11 @@ namespace ProjectIDF
 
             //CreatRandomTerroristNames name = new CreatRandomTerroristNames();
             //CreatRandomNumOfTerrorists.printTerrorist();
-            foreach (var item in CreatRandomNumOfTerrorists.TerroristList())
-            {
-                Console.WriteLine(item);
-            }
-            IntelligenceMessages.print();
+            //foreach (var item in CreatRandomNumOfTerrorists.TerroristList())
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //IntelligenceMessages.printThrats();
             //foreach (var a in TerroristWeaponArssenal.Personalweapon()) { 
             //    Console.WriteLine(a);
             //}

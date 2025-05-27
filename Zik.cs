@@ -6,17 +6,35 @@ using System.Threading.Tasks;
 
 namespace ProjectIDF
 {
-    internal class Zik : AttackTools
+    internal class Zik : IAttackTools
     {
-        public override string ToolName { get; } = "Zik";
-        public override string[] BombType { get; } = { "veraity bombs" };
-        public override int AmmunitionCapacity { get; } = 3;
-        public override string[] EffectiveAgainst { get; } = { "pepole","car" };
-        //public Zik(string bombType , int ammunitionCapacity , string effectiveAgainst )
-        //{
-        //    BombType = bombType;
-        //    AmmunitionCapacity = ammunitionCapacity;
-        //    EffectiveAgainst = effectiveAgainst;
-        //}
+        public string SerialNumber { get; set; }
+        public string ToolName { get; } = "Zik";
+        public string[] BombType { get; } = { "veraity bombs" };
+        public int AmmunitionCapacity { get; set; } = 3;
+        public string[] EffectiveAgainst { get; } = { "pepole","car" };
+        public int FuelSupply { get; set; } = 100;
+        public void UseAmmunition()
+        {
+            AmmunitionCapacity -= 1;
+        }
+        public void ReloadAmmonition()
+        {
+            AmmunitionCapacity = 3;
+        }
+        public void UseFuel()
+        {
+            FuelSupply -= 1;
+        }
+        public void ReloadFuel()
+        {
+            FuelSupply = 100;
+        }
+        public IAttackTools Clone()
+        {
+            return new Zik();
+        }
+
+        
     }
 }
