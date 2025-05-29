@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IDF_Project;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -12,7 +13,7 @@ namespace ProjectIDF
         public string DateOfEstablishment { get; } = "may 26 1948";
         public string CurrentCommander { get; } = "eyal zamir";
         private string[] CollectionOfStrike = new string[] { "aircraft", "drones", "artillery"};
-        public Dictionary<string, List<IAttackTools>> Arsenal = new Dictionary<string, List<IAttackTools>>();
+        public static Dictionary<string, List<IAttackTools>> Arsenal = new Dictionary<string, List<IAttackTools>>();
 
         public void CreatArsenal()
         {
@@ -33,20 +34,17 @@ namespace ProjectIDF
                     prototype = new Artillery();
                 }
 
-
                 Random rand = RandomProvider.GetRandom();
                 for (int i = 1; i < rand.Next(20,30); i++)
                 {
                     IAttackTools cloned = prototype.Clone();
                     cloned.SerialNumber = $"{i:D3}";
                     attackUnit.Add(cloned);
-
                 }
                 Arsenal[strike] = attackUnit;
-                
-
             }
         }
+        
         public void PrintArsenal()
         {
             foreach(List<IAttackTools> arsnal in Arsenal.Values)
@@ -60,4 +58,6 @@ namespace ProjectIDF
             }
         }
     }
+
+    
 }

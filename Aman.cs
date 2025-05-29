@@ -10,35 +10,49 @@ namespace ProjectIDF
     {
         static public Terrorist terrorist;
         public string[] LocationTerrorist = { "home", "car", "outside" };
-        public string timestamp;
-    
-        static string[] Thrats()
-        {
-            Random rand = RandomProvider.GetRandom();
-            string[] thrats = new string[rand.Next(10, 20)];
-            for (int i = 0; i < thrats.Length; i++)
-            {
-                string t = IntelligenceMessages.terroristAlerts[rand.Next(30)];
-                if (!thrats.Contains(t))
-                {
-                    thrats[i] = t + $" timestamp: {DateTime.Now}";
-                }
-                else
-                {
-                    i--;
-                }
-            }
-            return thrats;
-        }
-        static public string[] alerts = Thrats();
-        public void PrintThrats()
-        {
-            string[] thrat = alerts;
-            foreach (string alart in thrat)
-            {
-                Console.WriteLine(alart);
-            }
-        }
+        public string timestamp = DateTime.Now.ToString();
 
+        List<Terrorist> terroristList = CreatRandomNumOfTerrorists.terroristList;
+        public static List<string> ThratsList = new List<string>();
+        Random rand = RandomProvider.GetRandom();
+
+        public void Thrats()
+        {
+            for (int i = 0; i < rand.Next(15, 20);i++)
+            {
+                Terrorist terrorist = terroristList[rand.Next(CreatRandomNumOfTerrorists.terroristList.Count)];
+                DateTime randomTime = DateTime.Now.AddSeconds(-rand.Next(0, 3 * 24 * 60 * 60));
+                string location = LocationTerrorist[rand.Next(3)];
+                terrorist.AddAlert(randomTime,location);
+                terrorist.setLocation(location);
+                ThratsList.Add($"messaeg recived at {randomTime} \n{terrorist.Name} was spoted in {location}");
+            }
+        }
+        public string getTheMostReports()
+        {
+            Thrats();
+            int max = 0;
+            string name = "";
+            string location = "";
+            string time = "";
+            foreach (Terrorist t in terroristList)
+            {
+                if (t.GetNumOfAlert() > max)
+                {
+                    time = "";
+                    name = t.Name;
+                    max = t.GetNumOfAlert();
+                    location = t.Location;
+                    foreach (Dictionary<DateTime, string> dict in t.Alerts)
+                    {
+                        foreach (KeyValuePair<DateTime, string> pair in dict)
+                        {
+                            time += $"at {pair.Key}, located: {pair.Value}\n";
+                        }
+                    }
+                }
+            } 
+            return $"most alearts: {name} ({max})\n{time}";
+        }
     }
 }
