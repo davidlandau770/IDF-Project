@@ -20,17 +20,11 @@ namespace ProjectIDF
                 {
                     weaponPoins++;
                 }
-                else if (weaponItem == "gun")
-                {
-                    weaponPoins += 2;
                 }
                 else if (weaponItem == "M16" || weaponItem == "AK47")
                 {
                     weaponPoins += 3;
                 }
-            }
-            return weaponPoins;
-        }
              
         public Dictionary<Terrorist, int> QualityScore()
         {
@@ -56,8 +50,6 @@ namespace ProjectIDF
             int i = 1;
             foreach (KeyValuePair<Terrorist,int> terrorists in sortedByValue)
             {
-                if (terrorists.Key.Status != "dad")
-                {
                     string message = $"{i}. {terrorists.Key.Name}, dengoures level: {terrorists.Value}";
                     listLevelOfDengarous.Add(message);
                     Console.WriteLine(message);
@@ -79,19 +71,5 @@ namespace ProjectIDF
             }
             return $"name: {terrorist}, dengoures level: {max}";
         }
-
-        //public string GetDengrous()
-        //{
-        //    string terrorist = "";
-        //    foreach (KeyValuePair<Terrorist, int> Q in QualityScore())
-        //    {
-        //        if (Q.Value > max)
-        //        {
-        //            max = Q.Value;
-        //            terrorist = Q.Key.ToString();
-        //        }
-        //    }
-        //    return $"{terrorist} \n dengoures level: {max}";
-        //}
     }
 }

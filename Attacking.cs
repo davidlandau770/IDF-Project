@@ -24,7 +24,6 @@ namespace IDF_Project
         }
         public void Attack(string name)
         {
-            
             if (Success())
             {
                 Console.WriteLine($"Congratulations, we successfully eliminated {name}.");
