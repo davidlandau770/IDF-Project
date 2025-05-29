@@ -47,10 +47,7 @@
     <Compile Include="Artillery.cs" />
     <Compile Include="Attacking.cs" />
     <Compile Include="IAttackTools.cs" />
-    <Compile Include="AttackvAilability.cs" />
-    <Compile Include="CarryingOutAttack.cs" />
-    <Compile Include="Artillery.cs" />
-    <Compile Include="AttackTools.cs" />
+    <Compile Include="AttackAvailability.cs" />
     <Compile Include="CreatRandomNumOfTerrorists.cs" />
     <Compile Include="CreatRandomTerroristNames.cs" />
     <Compile Include="F16.cs" />

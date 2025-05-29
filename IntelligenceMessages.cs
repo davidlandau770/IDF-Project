@@ -9,7 +9,7 @@ namespace ProjectIDF
 {
     internal class IntelligenceMessages
     {
-        static  string[] namesList = CreatRandomNumOfTerrorists.terroristNames;
+        static string[] namesList = CreatRandomNumOfTerrorists.terroristNames;
         static Random rand = RandomProvider.GetRandom();
         static List<string> terroristAlerts = new List<string>
         {

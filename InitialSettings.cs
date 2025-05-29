@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IDF_Project;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,9 @@ namespace ProjectIDF
             //IdfDefinition a = new IdfDefinition();
             IdfDefinition idf = new IdfDefinition();
             idf.CreatArsenal();
-            idf.printArsenal();
+            //idf.printArsenal();
+            AttackAvailability b = new AttackAvailability();
+            b.showAllarsenal();
             //for (int i = 0; i < 3; i++)
             //{
             //    idf.unit.Add()
@@ -25,7 +28,7 @@ namespace ProjectIDF
             //Terrorist terrorist5 = new Terrorist("mosa", 4, "dead",new string[ ] { "gun"});
             //IdfDefinition idf = new IdfDefinition();
 
-            //CreatRandomNumOfTerrorists.TerroristList();
+            CreatRandomNumOfTerrorists.TerroristList();
             //List<Terrorist> a = CreatRandomNumOfTerrorists.TerroristList();
             //CreatRandomNumOfTerrorists.print
             //foreach (var item in CreatRandomNumOfTerrorists.TerroristList())

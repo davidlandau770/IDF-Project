@@ -11,8 +11,11 @@ namespace ProjectIDF
     {
         public string Name {  get; set; }
         int Rank;
-        string Status = "alive";
+        public string Status = "alive";
         public string[] Weapon;
+        public string Location = "";
+        
+        public List<Dictionary<DateTime,string>> Alerts { get; set; }
         public int rank
         {
             get {  return Rank; }
@@ -38,12 +41,31 @@ namespace ProjectIDF
             Name = name;
             this.rank = rank;
             this.Weapon = weapon;
+            Alerts = new List<Dictionary<DateTime, string>>();
         }
 
         public override string ToString()
         {
             return $"Name: {Name}, Rank: {Rank}, Status: {Status}, Weapons: {string.Join(", ", Weapon)}";
         }
+
+        public void AddAlert(DateTime time,string location)
+        {
+            Alerts.Add(new Dictionary<DateTime, string> { { time, location } });
+            Alerts = Alerts
+               .OrderBy(dict => dict.Keys.First())
+               .ToList();
+        }
+
+        public int GetNumOfAlert()
+        {
+            return Alerts.Count;
+        }
+        public void setLocation(string location)
+        {
+            Location = location;
+        }
+        
 
     }
 }
