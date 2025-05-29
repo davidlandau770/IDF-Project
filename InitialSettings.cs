@@ -26,8 +26,8 @@ namespace ProjectIDF
             //idf.PrintArsenal();
 
             //idf.printArsenal();
-            AttackAvailability b = new AttackAvailability();
-            b.showAllarsenal();
+            //AttackAvailability b = new AttackAvailability();
+            //b.showAllarsenal();
             //for (int i = 0; i < 3; i++)
             //{
             //    idf.unit.Add()

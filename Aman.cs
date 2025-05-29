@@ -28,22 +28,22 @@ namespace ProjectIDF
                 ThratsList.Add($"messaeg recived at {randomTime} \n{terrorist.Name} was spoted in {location}");
             }
         }
-        public string getTheMostReports()
+        public string GetTheMostReports()
         {
             Thrats();
             int max = 0;
             string name = "";
             string location = "";
             string time = "";
-            foreach (Terrorist t in terroristList)
+            foreach (Terrorist terrorist in terroristList)
             {
-                if (t.GetNumOfAlert() > max)
+                if (terrorist.GetNumOfAlert() > max)
                 {
                     time = "";
-                    name = t.Name;
-                    max = t.GetNumOfAlert();
-                    location = t.Location;
-                    foreach (Dictionary<DateTime, string> dict in t.Alerts)
+                    name = terrorist.Name;
+                    max = terrorist.GetNumOfAlert();
+                    location = terrorist.Location;
+                    foreach (Dictionary<DateTime, string> dict in terrorist.Alerts)
                     {
                         foreach (KeyValuePair<DateTime, string> pair in dict)
                         {
