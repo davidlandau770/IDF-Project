@@ -12,7 +12,7 @@ namespace ProjectIDF
         static int amount = rand.Next(15,20);
         public static string[] terroristNames = new string[amount];
         public static List<Terrorist> terroristList = new List<Terrorist>();
-        public static List<Terrorist> TerroristList()
+        public List<Terrorist> TerroristList()
         {
             for (int i = 0; i < amount; i++)
             {
@@ -30,6 +30,9 @@ namespace ProjectIDF
             }
             return terroristList;
         }
-        
-}
+        public void Aaa()
+        {
+            Console.WriteLine(terroristNames[0]);
+        }
+    }
 }

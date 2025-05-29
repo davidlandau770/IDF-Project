@@ -36,18 +36,33 @@ namespace ProjectIDF
             Dictionary<Terrorist, int> qualityScore = new Dictionary<Terrorist, int>();
             foreach (var t in terList)
             {
-                qualityScore[t] = t.rank* WeaponPoints(t.Weapon);
+                qualityScore[t] = t.rank * WeaponPoints(t.Weapon);
             }
             return qualityScore;
         }
-        public void printQualityScore()
+
+        public void PrintQualityScore()
         {
             foreach(KeyValuePair<Terrorist,int> Q in QualityScore())
             {
                 Console.WriteLine($"{Q.Key.ToString()} --------{Q.Value}");
             }
         }
-        public string getMostDengrous()
+        public void QualityScoreByTerrorist()
+        {
+            var sortedByValue = QualityScore().OrderByDescending(pair => pair.Value);
+            int i = 1;
+            foreach (KeyValuePair<Terrorist,int> terrorists in sortedByValue)
+            {
+                if (terrorists.Key.Status == "dad") { }
+                else
+                {
+                    Console.WriteLine($"{i}. {terrorists.Key.Name}, dengoures level: {terrorists.Value}");
+                }
+                i++;
+            }
+        }
+        public string GetMostDengrous()
         {
             int max = 0;
             string terrorist = "";
@@ -62,5 +77,18 @@ namespace ProjectIDF
             return $"{terrorist} \n dengoures level: {max}";
         }
 
+        //public string GetDengrous()
+        //{
+        //    string terrorist = "";
+        //    foreach (KeyValuePair<Terrorist, int> Q in QualityScore())
+        //    {
+        //        if (Q.Value > max)
+        //        {
+        //            max = Q.Value;
+        //            terrorist = Q.Key.ToString();
+        //        }
+        //    }
+        //    return $"{terrorist} \n dengoures level: {max}";
+        //}
     }
 }
