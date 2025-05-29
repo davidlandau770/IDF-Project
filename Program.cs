@@ -10,8 +10,12 @@ namespace ProjectIDF
     {
         static void Main(string[] args)
         {
-            MenuToUser menu = new MenuToUser();
-            menu.MenuList();
+            //MenuToUser menu = new MenuToUser();
+            //menu.MenuList();
+            Aman a = new Aman();
+            foreach (var b in a.Thrats()) {
+                Console.WriteLine(b);
+            }
         }
     }
 }
