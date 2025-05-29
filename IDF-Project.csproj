@@ -51,7 +51,6 @@
     <Compile Include="Attacking.cs" />
     <Compile Include="IAttackTools.cs" />
     <Compile Include="AttackAvailability.cs" />
-    <Compile Include="AttackvAilability.cs" />
     <Compile Include="CreatRandomNumOfTerrorists.cs" />
     <Compile Include="CreatRandomTerroristNames.cs" />
     <Compile Include="F16.cs" />

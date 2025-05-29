@@ -10,6 +10,7 @@ namespace ProjectIDF
     internal class PrioritizingGoals
     {
         static public List<Terrorist> terList = CreatRandomNumOfTerrorists.terroristList;
+        public static List<string> listLevelOfDengarous = new List<string>();
         public int WeaponPoints(string[] weapType)
         {
             int weaponPoins = 0;   
@@ -50,14 +51,16 @@ namespace ProjectIDF
         }
         public void QualityScoreByTerrorist()
         {
+            
             var sortedByValue = QualityScore().OrderByDescending(pair => pair.Value);
             int i = 1;
             foreach (KeyValuePair<Terrorist,int> terrorists in sortedByValue)
             {
-                if (terrorists.Key.Status == "dad") { }
-                else
+                if (terrorists.Key.Status != "dad")
                 {
-                    Console.WriteLine($"{i}. {terrorists.Key.Name}, dengoures level: {terrorists.Value}");
+                    string message = $"{i}. {terrorists.Key.Name}, dengoures level: {terrorists.Value}";
+                    listLevelOfDengarous.Add(message);
+                    Console.WriteLine(message);
                 }
                 i++;
             }
@@ -71,10 +74,10 @@ namespace ProjectIDF
                 if (Q.Value > max)
                 {
                     max = Q.Value;
-                    terrorist = Q.Key.ToString();
+                    terrorist = Q.Key.Name;
                 }
             }
-            return $"{terrorist} \n dengoures level: {max}";
+            return $"name: {terrorist}, dengoures level: {max}";
         }
 
         //public string GetDengrous()

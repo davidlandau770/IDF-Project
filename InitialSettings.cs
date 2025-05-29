@@ -39,7 +39,7 @@ namespace ProjectIDF
             //Terrorist terrorist5 = new Terrorist("mosa", 4, "dead",new string[ ] { "gun"});
             //IdfDefinition idf = new IdfDefinition();
 
-            CreatRandomNumOfTerrorists.TerroristList();
+            //CreatRandomNumOfTerrorists.TerroristList();
             //List<Terrorist> a = CreatRandomNumOfTerrorists.TerroristList();
             //CreatRandomNumOfTerrorists.Print
             //foreach (var item in CreatRandomNumOfTerrorists.TerroristList())
