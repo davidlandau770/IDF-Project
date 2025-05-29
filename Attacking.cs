@@ -10,27 +10,27 @@ namespace IDF_Project
     internal class Attacking
     {
         string AttackTime = DateTime.Now.ToString();
-        public void target()
+        
+        public void Target()
         {
             bool choice = false;
-            int a = 0;
+            int number = 0;
             while (!choice)
             {
                 Console.WriteLine("1: choose you target from data base\n" +
                     "2: attack most dengoures terrorist");
-                choice = int.TryParse(Console.ReadLine(), out a);
+                choice = int.TryParse(Console.ReadLine(), out number);
                 if (!choice) { Console.WriteLine("not a valid choice"); }
             }
-            switch (a)
+            PrioritizingGoals prioritizing = new PrioritizingGoals();
+            switch (number)
             {
                 case 1:
-
-                    List<Terrorist> t = CreatRandomNumOfTerrorists.terroristList;
-                    //p.printTerrorist();
+                    prioritizing.QualityScoreByTerrorist();
                     break;
                 case 2:
-                    MostReports rep = new MostReports();
-                    rep.mostAlerts();
+                    //PrioritizingGoals prioritizing = new PrioritizingGoals();
+                    Console.WriteLine(prioritizing.GetMostDengrous());
                     break;
             }
         }

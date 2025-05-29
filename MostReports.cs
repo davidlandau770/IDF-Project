@@ -9,7 +9,7 @@ namespace ProjectIDF
 {
     internal class MostReports
     {
-        string[] alerts = IntelligenceMessages.alerts;
+        string[] alerts = Aman.alerts;
         static string[] namesList = CreatRandomNumOfTerrorists.terroristNames;
         
         public Dictionary<string,int> AlertsByName()

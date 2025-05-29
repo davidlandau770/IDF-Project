@@ -11,7 +11,8 @@ namespace ProjectIDF
         public void MenuList()
         {
             InitialSettings initialSettings = new InitialSettings();
-            initialSettings.trys();
+            //initialSettings.InitialSetting();
+            initialSettings.Trys();
 
             // בהערה עד סיום העבודה
             //IdfDefinition definition = new IdfDefinition();

@@ -8,18 +8,16 @@ namespace ProjectIDF
 {
     internal class Aman
     {
-        public Terrorist terrorist;
+        static public Terrorist terrorist;
         public string[] LocationTerrorist = { "home", "car", "outside" };
         public string timestamp = DateTime.Now.ToString();
 
         List<Terrorist> terroristList = CreatRandomNumOfTerrorists.terroristList;
         public static List<string> ThratsList = new List<string>();
         Random rand = RandomProvider.GetRandom();
- 
 
         public void Thrats()
         {
-            
             for (int i = 0; i < rand.Next(15, 20);i++)
             {
                 Terrorist terrorist = terroristList[rand.Next(CreatRandomNumOfTerrorists.terroristList.Count)];
@@ -28,10 +26,8 @@ namespace ProjectIDF
                 terrorist.AddAlert(randomTime,location);
                 terrorist.setLocation(location);
                 ThratsList.Add($"messaeg recived at {randomTime} \n{terrorist.Name} was spoted in {location}");
-               
             }
         }
-
         public string getTheMostReports()
         {
             Thrats();
@@ -55,10 +51,8 @@ namespace ProjectIDF
                         }
                     }
                 }
-            }
-            
+            } 
             return $"most alearts: {name} ({max})\n{time}";
-
         }
     }
 }

@@ -34,34 +34,29 @@ namespace ProjectIDF
                     prototype = new Artillery();
                 }
 
-
                 Random rand = RandomProvider.GetRandom();
                 for (int i = 1; i < rand.Next(20,30); i++)
                 {
                     IAttackTools cloned = prototype.Clone();
                     cloned.SerialNumber = $"{i:D3}";
                     attackUnit.Add(cloned);
-
                 }
                 Arsenal[strike] = attackUnit;
-                
-
             }
         }
-        //public void printArsenal()
-        //{
-        //    foreach(List<IAttackTools> arsnal in Arsenal.Values)
-        //    {
-        //        Console.WriteLine(arsnal.Count);
-        //        foreach(IAttackTools tool in arsnal)
-        //        {
-        //            Console.WriteLine(tool.ToolName);
-        //            Console.WriteLine(tool.SerialNumber);
-        //        }
-        //    }
-        //}
-
         
+        public void PrintArsenal()
+        {
+            foreach(List<IAttackTools> arsnal in Arsenal.Values)
+            {
+                Console.WriteLine(arsnal.Count);
+                foreach(IAttackTools tool in arsnal)
+                {
+                    Console.WriteLine(tool.ToolName);
+                    Console.WriteLine(tool.SerialNumber);
+                }
+            }
+        }
     }
 
     
