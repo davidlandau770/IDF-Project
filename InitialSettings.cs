@@ -26,8 +26,8 @@ namespace ProjectIDF
             //idf.PrintArsenal();
 
             //idf.printArsenal();
-            AttackAvailability b = new AttackAvailability();
-            b.showAllarsenal();
+            //AttackAvailability b = new AttackAvailability();
+            //b.showAllarsenal();
             //for (int i = 0; i < 3; i++)
             //{
             //    idf.unit.Add()
@@ -39,7 +39,6 @@ namespace ProjectIDF
             //Terrorist terrorist5 = new Terrorist("mosa", 4, "dead",new string[ ] { "gun"});
             //IdfDefinition idf = new IdfDefinition();
 
-            CreatRandomNumOfTerrorists.TerroristList();
             //List<Terrorist> a = CreatRandomNumOfTerrorists.TerroristList();
             //CreatRandomNumOfTerrorists.Print
             //foreach (var item in CreatRandomNumOfTerrorists.TerroristList())

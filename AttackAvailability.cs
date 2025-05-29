@@ -10,7 +10,7 @@ namespace IDF_Project
     internal class AttackAvailability
     {
         string catagory = "";
-        public string showAllarsenal()
+        public string ShowAllarsenal()
         {
             //Console.WriteLine("name         fuel (%)     boomb left\n");
             foreach(var all in IdfDefinition.Arsenal)
