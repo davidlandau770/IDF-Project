@@ -9,7 +9,6 @@
 //{
 //    internal class MostReports
 //    {
-//        string[] alerts;
 //        static string[] namesList = CreatRandomNumOfTerrorists.terroristNames;
         
 //        public Dictionary<string,int> AlertsByName()
