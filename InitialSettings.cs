@@ -17,6 +17,7 @@ namespace ProjectIDF
             
             // נסיונות
             Aman aman = new Aman();
+            aman.Thrats();
             Attacking attacking = new Attacking();
             attacking.Target();
 

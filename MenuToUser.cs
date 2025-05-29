@@ -40,7 +40,7 @@ namespace ProjectIDF
                     case 3:
                         Console.Clear();
                         PrioritizingGoals prioritizing = new PrioritizingGoals();
-                        Console.WriteLine(prioritizing.GetMostDengrous());
+                        Console.WriteLine(prioritizing.GetMostDangerous());
                         PrintNice();
                         break;
                     case 4:
@@ -51,6 +51,8 @@ namespace ProjectIDF
                         break;
                     case 5:
                         Console.Clear();
+                        Attacking attacking1 = new Attacking();
+                        attacking1.GetAttackLog();
                         PrintNice();
                         break;
                     case 6:
