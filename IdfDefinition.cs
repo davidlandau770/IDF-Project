@@ -47,7 +47,7 @@ namespace ProjectIDF
 
             }
         }
-        public void printArsenal()
+        public void PrintArsenal()
         {
             foreach(List<IAttackTools> arsnal in Arsenal.Values)
             {

@@ -1,19 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
+using IDF_Project;
 
 namespace ProjectIDF
 {
     internal class InitialSettings
     {
-        public void trys()
+        public async Task Trys()
         {
+            IdfDefinition idf = InitialSetting();
+            
+            // נסיונות
+            Aman aman = new Aman();
+            Attacking attacking = new Attacking();
+            attacking.Target();
+
+
+            //CreatRandomNumOfTerrorists creatRandomNumOfTerrorists = new CreatRandomNumOfTerrorists();
+            //creatRandomNumOfTerrorists.Aaa();
+            //idf.PrintArsenal();
+
             //IdfDefinition a = new IdfDefinition();
-            IdfDefinition idf = new IdfDefinition();
-            idf.CreatArsenal();
-            idf.printArsenal();
             //for (int i = 0; i < 3; i++)
             //{
             //    idf.unit.Add()
@@ -27,15 +38,28 @@ namespace ProjectIDF
 
             //CreatRandomNumOfTerrorists.TerroristList();
             //List<Terrorist> a = CreatRandomNumOfTerrorists.TerroristList();
-            //CreatRandomNumOfTerrorists.print
+            //CreatRandomNumOfTerrorists.Print
             //foreach (var item in CreatRandomNumOfTerrorists.TerroristList())
             //{
             //    Console.WriteLine(item);
             //}
-            //IntelligenceMessages.printThrats();
+            //IntelligenceMessages.PrintThrats();
             //foreach (var a in TerroristWeaponArssenal.Personalweapon()) { 
             //    Console.WriteLine(a);
             //}
         }
-    }
+        public IdfDefinition InitialSetting()
+        {
+            // יצירה ראשונית של כלי נשק צה"ליים
+            IdfDefinition idf = new IdfDefinition();
+            idf.CreatArsenal();
+
+            // יצירת טרוריסטים ראשוניים
+            CreatRandomNumOfTerrorists terrorists = new CreatRandomNumOfTerrorists();
+            terrorists.TerroristList();
+
+            // החזרה כדי שיהיה אפשר להתנסות למעלה על אותו מופע
+            return idf;
+        }
+}
 }
