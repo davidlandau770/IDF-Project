@@ -29,7 +29,6 @@ namespace IDF_Project
                     prioritizing.QualityScoreByTerrorist();
                     break;
                 case 2:
-                    //PrioritizingGoals prioritizing = new PrioritizingGoals();
                     Console.WriteLine(prioritizing.GetMostDengrous());
                     break;
             }
