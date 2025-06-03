@@ -9,68 +9,57 @@ namespace ProjectIDF
 {
     internal class PrioritizingGoals
     {
-        static public List<Terrorist> terList = CreatRandomNumOfTerrorists.terroristList;
-        public static List<string> listLevelOfDengarous = new List<string>();
+        public static List<Terrorist> terList = CreatRandomNumOfTerrorists.terroristList;
+        public static List<string> dangerList = new List<string>();
         public int WeaponPoints(string[] weapType)
         {
-            int weaponPoins = 0;   
-            foreach (var weaponItem in weapType) 
+            int points = 0;
+            foreach (var weaponItem in weapType)
             {
-                if (weaponItem == "knife")
+                switch (weaponItem)
                 {
-                    weaponPoins++;
-                }
-                else if (weaponItem == "gun")
-                {
-                    weaponPoins += 2;
-                }
-                else if (weaponItem == "M16" || weaponItem == "AK47")
-                {
-                    weaponPoins += 3;
+                    case "knife": points += 1; break;
+                    case "gun": points += 2; break;
+                    case "M16":
+                    case "AK47": points += 3; break;
                 }
             }
-            return weaponPoins;
+            return points;
         }
-             
+
         public Dictionary<Terrorist, int> QualityScore()
         {
             Dictionary<Terrorist, int> qualityScore = new Dictionary<Terrorist, int>();
             foreach (var t in terList)
             {
-                qualityScore[t] = t.rank * WeaponPoints(t.Weapon);
+                if (t.Status == "alive")
+                {
+                    qualityScore[t] = t.rank * WeaponPoints(t.Weapon);
+                }
             }
             return qualityScore;
         }
-
-        public void PrintQualityScore()
+        public List<string> QualityScoreByTerrorist()
         {
-            foreach(KeyValuePair<Terrorist,int> Q in QualityScore())
-            {
-                Console.WriteLine($"{Q.Key.ToString()} --------{Q.Value}");
-            }
-        }
-        public void QualityScoreByTerrorist()
-        {
-            
+            dangerList.Clear();
             var sortedByValue = QualityScore().OrderByDescending(pair => pair.Value);
             int i = 1;
-            foreach (KeyValuePair<Terrorist,int> terrorists in sortedByValue)
+            foreach (KeyValuePair<Terrorist, int> terrorists in sortedByValue)
             {
-                if (terrorists.Key.Status != "dad")
-                {
-                    string message = $"{i}. {terrorists.Key.Name}, dengoures level: {terrorists.Value}";
-                    listLevelOfDengarous.Add(message);
-                    Console.WriteLine(message);
-                }
-                i++;
+                string message = $"{terrorists.Key.Name}, dengoures level: {terrorists.Value}";
+                dangerList.Add(message);               
             }
+            
+                        
+            return dangerList;
         }
-        public string GetMostDengrous()
+        public string GetMostDangerous()
         {
             int max = 0;
             string terrorist = "";
             foreach (KeyValuePair<Terrorist, int> Q in QualityScore())
             {
+                if (Q.Key.Status == "dead") continue;
                 if (Q.Value > max)
                 {
                     max = Q.Value;
@@ -79,19 +68,5 @@ namespace ProjectIDF
             }
             return $"name: {terrorist}, dengoures level: {max}";
         }
-
-        //public string GetDengrous()
-        //{
-        //    string terrorist = "";
-        //    foreach (KeyValuePair<Terrorist, int> Q in QualityScore())
-        //    {
-        //        if (Q.Value > max)
-        //        {
-        //            max = Q.Value;
-        //            terrorist = Q.Key.ToString();
-        //        }
-        //    }
-        //    return $"{terrorist} \n dengoures level: {max}";
-        //}
     }
 }

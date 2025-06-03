@@ -42,6 +42,7 @@ namespace ProjectIDF
             this.rank = rank;
             this.Weapon = weapon;
             Alerts = new List<Dictionary<DateTime, string>>();
+            
         }
 
         public override string ToString()

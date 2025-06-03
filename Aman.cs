@@ -18,9 +18,10 @@ namespace ProjectIDF
 
         public void Thrats()
         {
+            
             for (int i = 0; i < rand.Next(15, 20);i++)
             {
-                Terrorist terrorist = terroristList[rand.Next(CreatRandomNumOfTerrorists.terroristList.Count)];
+                Terrorist terrorist = terroristList[rand.Next(1,CreatRandomNumOfTerrorists.terroristList.Count)-1];
                 DateTime randomTime = DateTime.Now.AddSeconds(-rand.Next(0, 3 * 24 * 60 * 60));
                 string location = LocationTerrorist[rand.Next(3)];
                 terrorist.AddAlert(randomTime,location);
